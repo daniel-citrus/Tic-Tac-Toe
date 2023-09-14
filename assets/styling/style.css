@@ -1,0 +1,396 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End CSS Reset */
+
+/*
+    Inspiration of colors
+
+    https://www.levelwinner.com/wp-content/uploads/2021/11/cats-and-soup-guide-1000x563-1.jpg
+*/
+:root {
+    --secondary-background: #CCC5B9;
+    --secondary-background-label: #ebe5d9;
+    --secondary-background-label-highlight: #d8ceb9;
+    --secondary-border-color: #a79e8c;
+    --primary-color: #252422;
+    --secondary-color: #4d3636;
+    --button-border-color: #48443c;
+    --secondary-color-highlight: #666461;
+    --disabled-background-color: hwb(0 67% 33% / 0.5);
+    --disabled-color-border: rgba(126, 126, 126, 0.5);
+    --disabled-color: hsla(0, 1%, 19%, 0.5);
+    --label-selected: #91bce0;
+    --label-selected-border: #627f97;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'ArchitectsDaughter', Avant Garde, Avantgarde, Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    background-image: url('/assets/media/mobilebg.svg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+}
+
+button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-progress-appearance: none;
+    transition: background-color 80ms ease-in-out;
+
+    color: var(--secondary-background-label);
+    border: 2px solid var(--button-border-color);
+    background: var(--secondary-color-highlight);
+    border-radius: 5px;
+    font-family: 'ArchitectsDaughter';
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 7px;
+    box-shadow: 0 0 4px #48443c87;
+}
+
+button:hover {
+    background: #605a50;
+}
+
+.game {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-self: center;
+    align-items: center;
+    font-size: 1.7rem;
+    gap: 35px;
+}
+
+/* Must be placed after .game */
+.hidden {
+    display: none;
+}
+
+.game .board {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    justify-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: 2px solid var(--secondary-color);
+
+    width: 75vw;
+    height: 75vw;
+    max-width: 425px;
+    max-height: 425px;
+    font-size: calc(4rem + 1vw);
+
+    color: var(--secondary-color);
+    background: var(--secondary-color);
+}
+
+.game .board .cell {
+    background: var(--secondary-background-label);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game .board .win-mark {
+    background: #c3db8c;
+}
+
+.game .buttons {
+    font-size: 1.7rem;
+
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.game .gameInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+}
+
+.game .gameInfo>* {
+    height: 30px;
+    text-align: center;
+}
+
+.game .playerBoard {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background: var(--secondary-background-label);
+    border: 2px solid var(--secondary-background);
+    border-radius: 10px;
+}
+
+.game .player {
+    padding: 10px 20px;
+}
+
+.game .player.current-player {
+    background: #666461;
+    color: #fadd76;
+    border-radius: 7px;
+}
+
+.game .title {
+    font-size: 2rem;
+}
+
+.main {
+    padding: 30px 0;
+}
+
+.main>* {
+    max-width: 85vw;
+    margin: 0 auto;
+}
+
+.starter form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+    padding: 15px;
+}
+
+.starter form fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+}
+
+.starter form>div {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+}
+
+.starter form input[type='radio'] {
+    display: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.starter form label {
+    display: block;
+    text-align: center;
+    border: 2px solid var(--secondary-border-color);
+    border-radius: 5px;
+    font-size: 1.8rem;
+    padding: 15px;
+    background: var(--secondary-background-label);
+    color: var(--secondary-color);
+    transition: background-color 80ms ease-in-out;
+    box-shadow: 0 0 4px #48443c87;
+}
+
+.starter form label:hover {
+    background: var(--secondary-background-label-highlight);
+}
+
+.starter form .disabled #easy+label,
+.starter form .disabled #medium+label,
+.starter form .disabled #hard+label {
+    background: var(--disabled-background-color);
+    border: 2px solid var(--disabled-color-border);
+    color: var(--disabled-color);
+    user-select: none;
+    pointer-events: none;
+}
+
+.starter .difficulty input:checked+label[for='easy'] {
+    background: #c3db8c;
+    border: 2px solid #859464;
+}
+
+.starter .difficulty input:checked+label[for='medium'] {
+    background: #fddc7b;
+    border: 2px solid #af9956;
+}
+
+.starter .difficulty input:checked+label[for='hard'] {
+    background: #cd7a74;
+    border: 2px solid #995a56;
+}
+
+.starter .firstPlayerSymbol input:checked+label,
+.starter .gamemode input:checked+label {
+    background: var(--label-selected);
+    border: 2px solid var(--label-selected-border);
+    color: var(--primary-color);
+}
+
+.starter .header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px 0;
+}
+
+.starter .header img {
+    height: 100px;
+    width: auto;
+}
+
+.starter .header .title {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.starter .title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'ArchitectsDaughter';
+    src: url('webfont.eot');
+    /* IE9 Compat Modes */
+    src: url('/assets/styling/fonts/Architects_Daughter/ArchitectsDaughter-Regular.ttf') format('truetype');
+    /* Safari, Android, iOS */
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        background-image: url('/assets/media/desktopbg.svg');
+    }
+
+    .game .board {
+        font-size: calc(5rem + 1vw);
+    }
+
+    .starter form {
+        max-width: 700px;
+        margin: 0 auto;
+        gap: 15px;
+
+        display: grid;
+        grid-template:
+            'mode sign'
+            'mode sign'
+            'diff diff'
+            'button button';
+
+        grid-auto-columns: minmax(0, 1fr);
+    }
+
+    .starter form fieldset {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+    }
+
+    .starter form fieldset * {
+        flex: 1 1 auto;
+    }
+
+    .starter form .difficulty {
+        grid-area: diff;
+    }
+
+    .starter form .difficulty fieldset {
+        flex-flow: row nowrap;
+    }
+
+    .starter form .firstPlayerSymbol {
+        grid-area: sign;
+    }
+
+    .starter form .gamemode {
+        grid-area: mode;
+    }
+
+    .starter form button {
+        grid-area: button;
+    }
+
+    .starter .header img {
+        height: 150px;
+    }
+
+    .starter .header .title {
+        font-size: 4rem;
+    }
+
+    .starter .title {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1025px) {}
+
+@media screen and (max-height: 700px) {}

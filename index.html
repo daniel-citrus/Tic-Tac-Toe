@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/styling/style.css">
+        <script src="/assets/scripts/script.js" defer></script>
+
+        <title>Tic Tac Toe</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="starter">
+                <div class="header">
+                    <div class="title">Tic Tac Toe</div>
+                    <img src="/assets/media/tic-tac-toe.png" alt="Tic Tac Toe">
+                </div>
+                <form>
+                    <div class="gamemode">
+                        <div class="title">Gamemode</div>
+                        <fieldset>
+                            <div class="radio-option">
+                                <input type="radio" name="gamemode" id="computer" value="computer" checked>
+                                <label for="computer">Computer</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="gamemode" id="two_player" value="two_player" required>
+                                <label for="two_player">Two Player</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="firstPlayerSymbol">
+                        <div class="title">Player 1</div>
+                        <fieldset>
+                            <div class="radio-option">
+                                <input type="radio" name="symbol" id="X" value="X" required checked>
+                                <label for="X">X</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="symbol" id="O" value="O">
+                                <label for="O">O</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="difficulty">
+                        <div class="title">Difficulty</div>
+                        <fieldset>
+                            <div class="radio-option">
+                                <input type="radio" name="difficulty" id="easy" value="easy" required checked>
+                                <label for="easy">Easy</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="difficulty" id="medium" value="medium">
+                                <label for="medium">Medium</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="difficulty" id="hard" value="hard">
+                                <label for="hard">Hard</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button type="button" id="startGame">Start</button>
+                </form>
+            </div>
+            <div class="game hidden">
+                <div class="playerBoard">
+                    <div class="player player1">
+                        <div class="info name"></div>
+                    </div>
+                    <div class="player player2">
+                        <div class="info name"></div>
+                    </div>
+                </div>
+                <div class="gameInfo">
+                    <div>
+                        Difficulty: <span class="difficulty"></span>
+                    </div>
+                    <div class="info message"></div>
+                </div>
+                <div class="info board"></div>
+                <div class="buttons">
+                    <button type="button" id="restart">Restart</button>
+                    <button type="button" id="exit">Exit</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
