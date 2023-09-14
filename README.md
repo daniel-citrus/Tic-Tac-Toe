@@ -4,9 +4,9 @@
 ## Features
 A player can play against a computer or another player.
 The Computer opponent has three difficulties:
-    - **Easy**: Random movement
-    - **Medium**: Starts with 2 random moves before it makes smart moves
-    - **Hard**: Really smart moves using the minmax algorithm
+- **Easy**: Random movement
+- **Medium**: Starts with 2 random moves before it makes smart moves
+- **Hard**: Really smart moves using the minmax algorithm
 
 ## Preview
 ### Menu
