@@ -5,10 +5,9 @@
 <br />
 <br />
 
-  <a  href="https://simthepencilgame.netlify.app/">Live Demo</a>
-
-   
+<a  href="https://simthepencilgame.netlify.app/">Live Demo</a>
 <br />
+
 ## Features
 A player can play against a computer or another player.
 The Computer opponent has three difficulties:
