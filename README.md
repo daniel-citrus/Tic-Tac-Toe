@@ -1,6 +1,14 @@
 # Tic-Tac-Toe
-[Tic-tac-toe]([docs/CONTRIBUTING.md](https://en.wikipedia.org/wiki/Tic-tac-toe)) is a paper-and-pencil game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
+
+[Tic-tac-toe]([docs/CONTRIBUTING.md](https://en.wikipedia.org/wiki/Tic-tac-toe)) is a paper-and-pencil game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+<br />
+<br />
+
+  <a  href="https://simthepencilgame.netlify.app/">Live Demo</a>
+
+   
+<br />
 ## Features
 A player can play against a computer or another player.
 The Computer opponent has three difficulties:
