@@ -5,7 +5,7 @@
 <br />
 <br />
 
-<a  href="https://simthepencilgame.netlify.app/">Live Demo</a>
+<a  href="https://a-game-of-tic-tac-toe.netlify.app/">Live Demo</a>
 <br />
 
 ## Features
